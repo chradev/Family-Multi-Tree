@@ -1,0 +1,47 @@
+ToDo list
+Multilanguage support for the help
+Multilanguage support for the date descriptors
+
+
+Version 2.5 (?.?.2020) changes:
+
+
+Version 2.4 (6.6.2020) changes:
+parent field is renamed to parents
+multiparent nodes are discribed with comma separated list of parent IDs in parents field
+loc_xxx fields are moved to plase and location fields
+place field is the same as loc_place
+location field consists of 3 comma separated numbers: latitude, longitude and zoom factor
+description field is used to enter the text shown in node tooltip for the chart
+font field is added to control the font used for the chart texts
+root only circle field is modified as comma separated numbers: 
+  circle radius (for all circles), horisontal and vertical inter text space
+  for highlighted node circle field is a single scale value
+
+Two sets of invisible nodes are required to align floating nodes to appropriate level
+The deepest level of the invisible nodes chains are used to avoid linked to root visible nodes
+
+Added feature to use data file in URL (FMTree/index.html?data=path-data-file-extension)
+Both CSV and JSON file types are allowed but should be on the same server where FMTree is
+
+d3.hierarchy is used to calculate hierarchy depth only
+Nodes by type and total number of nodes are calculated from real data
+Short date format (like "yyyy-mm-" and "yyyy-") support is added
+The circles for nodes without immages are decreased to half of the other nodes once
+
+Vertically all levels of the chart are aligned to fit size of the level with maximal number of nodes
+Horizonrally the inter-level space is calculated to fit the longest texts
+Added menu item to fit chart fully in viewing (dashed) area, while refresh will scale chart to 100%
+
+Export to SVG file is added to avoid 16k pixels limitation for raster grafics export and usage
+Magnification when chart is exported to PNG is calculated to fit 16k pixels size
+Export file name is changed to Data-File-Name-Extension.PNG or SVG
+
+New public data file is created with family tree of Bulgarian hero Vasil Levski
+The new public data file (Test-data-pub) has 202 visible nodes and 19 levels of hierarchy
+
+Some bug fixes were done as well
+
+
+Version 1 (10.1.2020)
+Initial version almost all planned features are implemented
