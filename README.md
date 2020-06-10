@@ -8,6 +8,7 @@ It is based on latest Internet technologies like HTML 5 and Data-Driven Document
 All resources in this repository are free for usage without any restrictions.
 
 ### If one is happy using them he or she can:
+- share experiance and modifications
 - drop a word to thank the autor
 - make somebody else happy
 
