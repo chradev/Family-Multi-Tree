@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FM Tree</title>
+    <link rel="shortcut icon" href=""/>
+
+    <!-- Data-Driven Documents (d3) framework - https://d3js.org
+         under BSD license - Copyright 2019 Mike Bostock 
+     -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3-hierarchy.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" ></script>
+
+     <!-- OpenLayers - Maps usage framework - https://openlayers.org
+          under the 2-clause BSD License (FreeBSD)
+          Not used staff?
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    -->
+    <link href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+
+    <!-- Helpful staff to export and save FM Tree cart as an image -->
+    <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
+    <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+
+    <!-- Fancy alert used for Help, About etc. -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@1/dark.css" rel="stylesheet">
+
+<!-- Additional themes for sweetalert2 library
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-borderless/borderless.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default/default.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui/material-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@1/dark.css">
+-->
+
+    <!-- Simple D3 Timeline chart by Genscape, Inc. - https://github.com/Genscape/d3-timeline
+         description: https://www.cssscript.com/simple-scrollable-timeline-chart-with-d3-js-d3-timeline/
+         The MIT License (MIT) - Copyright (c) [2016] [Commodity Vectors] -->
+    <!-- 
+    <link rel="stylesheet" href="timeline-chart.css" type="text/css">
+    Modified version of the Simple D3 Timeline chart -->
+    <script src="timeline-chart.js"></script>
+
+<!-- User defined CSS staff -->
+    <link rel="stylesheet" href="main.css" type="text/css">
+
+    <style>
+      /* Have to be doubled here bacause of problem at SVG to image export!!! */
+      .circle {
+        fill: #fff;
+        stroke: rgba(17, 146, 184, 1);
+        stroke-width: 2px;
+      }
+      .text {
+        text-rendering: optimizeLegibility;
+        font-family: "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
+        font: 12px sans-serif;
+      }
+      .link {
+        fill: none;
+        stroke: #aaa;
+        stroke-width: 2px;
+      }
+      .link-invisible {
+        fill: none;
+        stroke: #aaa;
+        stroke-width: 0px;
+        stroke-dasharray: 5px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <!-- Main staff of the FM Tree application -->
+    <script src="main.js"></script>
+
+  </body>
+</html>
