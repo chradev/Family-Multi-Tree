@@ -8,6 +8,7 @@ It is based on latest Internet technologies like HTML 5 and Data-Driven Document
 Real demo can be found on the following links (use right mouse click to open in new tab):
 - [FMTree application with loading public data](https://www.radevs.net/chradev/fmtree/index.html?data=FMTreePublicData.json)
 - [List of files of FMTree application and data](https://www.radevs.net/chradev/fmtree/files.php)
+- [A post with some details on Blogspot](https://chradev.blogspot.com/2020/06/family-multi-tree-fmtree-project-is-on.html)
 
 All resources in this repository are free for usage without any restrictions.
 
