@@ -5,11 +5,9 @@ It is based on latest Internet technologies like HTML 5 and Data-Driven Document
 
 ![Alt text](images/FMTreePublicAppl.jpg?raw=true "FMTree application snapshot")
 
-Real demo can be found on following links:
+Real demo can be found on following links (use right mouse click to open in new tab):
 - [FMTree application with loading public data](https://www.radevs.net/chradev/fmtree/index.html?data=FMTreePublicData.json)
 - [List of files of FMTree application and data](https://www.radevs.net/chradev/fmtree/files.php)
-
-- <a href="https://www.radevs.net/chradev/fmtree/files.php" onclick="return ! window.open(this.href);">List of files of FMTree application and data</a>
 
 All resources in this repository are free for usage without any restrictions.
 
