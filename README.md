@@ -12,7 +12,7 @@ Real demo can be found on the following links (use right mouse click to open in 
 All resources in this repository are free for usage without any restrictions.
 
 ### If one is happy using them he or she can:
-- share experiance and modifications
-- drop a word to thank the autor
+- share experience and modifications
+- drop a word to thank the author
 - make somebody else happy
 
