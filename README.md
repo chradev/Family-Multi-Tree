@@ -1,7 +1,7 @@
 # Family Multi-Tree (FMTree)
 FMTree is a simple but powerful web application for viewing, exploring and exporting as graphics of Family Multi-Trees described in data files.
 
-It is based on latest Internet technologies like HTML 5 and Data-Driven Documents (D3) Javascript library. In addition live worldwide maps and timeline are used to make presentation feature rich and more useful. Currently application works well with Google Chrome and Mozilla Firefox browsers on a desktop computer with height resolution display (because of intensive graphics generated for complex multi-trees).
+It is based on latest Internet technologies like HTML 5 and Data-Driven Documents (D3) Javascript library. In addition live worldwide maps and timeline are used to make presentation feature rich and more useful. Currently application works well with Google Chrome and Mozilla Firefox browsers on a desktop computer with height resolution display capable to show volume graphics generated for complex multi-trees.
 
 ![Alt text](images/FMTreePublicAppl.jpg?raw=true "FMTree application snapshot")
 
