@@ -6,6 +6,7 @@ It is based on latest Internet technologies like HTML 5 and Data-Driven Document
 ![Alt text](images/FMTreePublicAppl.jpg?raw=true "FMTree application snapshot")
 
 Real demo and more information can be found on the following links (use right mouse click to open in a new tab):
+- [Wiki page with some details on Github](https://github.com/chradev/Family-Multi-Tree/wiki)
 - [FMTree application with loading public data](https://www.radevs.net/chradev/fmtree/index.html?data=FMTreePublicData.json)
 - [List of files of FMTree application and data](https://www.radevs.net/chradev/fmtree/files.php)
 - [A post with some details on Blogspot](https://chradev.blogspot.com/2020/06/family-multi-tree-fmtree-project-is-on.html)
