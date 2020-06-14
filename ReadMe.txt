@@ -1,6 +1,12 @@
 ToDo list
-Multilanguage support for the help
+
+Better work on mobile devices
+Better work with other browsers
+Open data from link to other sites
+Solve the dates problem with some browsers
 Multilanguage support for the date descriptors
+Multilanguage support for the help
+
 
 
 Version 2.5 (?.?.2020) changes:
