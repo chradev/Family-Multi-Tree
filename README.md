@@ -11,6 +11,8 @@ Real demo and more information can be found on the following links (use right mo
 - [List of files of FMTree application and data](https://www.radevs.net/chradev/fmtree/files.php)
 - [A post with some details on Blogspot](https://chradev.blogspot.com/2020/06/family-multi-tree-fmtree-project-is-on.html)
 
+A special care is taken into account about the privacy of the personal data. They can be stored locally or on secured Internet places. For the most paranoid users all the work can be done completely off-line. On the other hand all source data can be kept only in Excel file and only filtered data can be converted to CSV and JSON files for usage with FMTree application.
+
 All resources in this repository are free for usage without any restrictions.
 
 ### If one is happy using them he or she can:
