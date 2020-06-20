@@ -1,15 +1,20 @@
 ToDo list
 
-Better work on mobile devices
-Better work with other browsers
-Open data from link to other sites
-Solve the dates problem with some browsers
-Multilanguage support for the date descriptors
-Multilanguage support for the help
+Better work:
+  on mobile devices,
+  with other browsers;
+Open data from link to other sites;
+Solve the dates problem with some browsers;
+Multilanguage support for the help.
 
 
 
 Version 2.5 (?.?.2020) changes:
+Bigger data and multi-tree view control like:
+  data privacy,
+  horizontal/vertical multi-tree views,
+  justified/stacked the same level nodes,
+  node layout positioning.
 
 
 Version 2.4 (6.6.2020) changes:
