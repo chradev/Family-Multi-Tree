@@ -13,7 +13,7 @@ Real demo and more information can be found on the following links (use right mo
 
 A special care is taken into account about the privacy of the personal data. They can be stored locally or on secured Internet places. For the most paranoid users all the work can be done completely off-line. On the other hand all source data can be kept only in Excel file and only filtered data can be converted to CSV and JSON files for usage with FMTree application.
 
-The next version development will include bigger data and multi-tree view control like: data privacy, horizontal/vertical views, stacked the same level nodes and their layout positioning. 
+The next version development will include bigger data and multi-tree view control like: data privacy, horizontal/vertical views, stacked the same level nodes and their layout positioning. The following image shows snapshot of FMTree application with vertical multi-tree and stacked the same level nodes:
 
 ![Alt text](images/FMTreePublicAppl-vert.png?raw=true "Snapshot of FMTree application with vertical stacked multi-tree")
 
