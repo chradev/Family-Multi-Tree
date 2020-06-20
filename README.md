@@ -15,7 +15,7 @@ A special care is taken into account about the privacy of the personal data. The
 
 The next version development will include bigger data and multi-tree view control like: privacy, horizontal/vertical views, stacked the same level nodes and their layout positioning. 
 
-![Alt text](images/FMTreePublicAppl-vert-small.png?raw=true "Snapshot of FMTree application with vertical stacked multi-tree")
+![Alt text](images/FMTreePublicAppl-vert.png?raw=true "Snapshot of FMTree application with vertical stacked multi-tree")
 
 All resources in this repository are free for usage without any restrictions.
 
