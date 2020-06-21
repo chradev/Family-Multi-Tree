@@ -10,11 +10,12 @@ Multilanguage support for the help.
 
 
 Version 2.5 (?.?.2020) changes:
-Bigger data and multi-tree view control like:
-  data privacy,
+Added support of short date format "-mm-dd"
+Added extended data privacy support in Excel file
+Added multi-tree view control like:
   horizontal/vertical multi-tree views,
   justified/stacked the same level nodes,
-  node layout positioning.
+  extended node layout positioning.
 
 
 Version 2.4 (6.6.2020) changes:
