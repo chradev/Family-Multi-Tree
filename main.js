@@ -1,6 +1,6 @@
 // Static internal data with single root node (hidden)
 var defaultData = [{
-  "name": "Family Multi-Tree application (ver. 2.4, 6.6.2020)",
+  "name": "Family Multi-Tree application (ver. 2.4, 06.06.2020)",
   "id": "root",
   "parents": null,
   "hide": "yes",
