@@ -1,6 +1,6 @@
 // Static internal data with single root node (hidden)
 var defaultData = [{
-  "name": "Family Multi-Tree application (ver. 2.5, ?.?.2020)",
+  "name": "Family Multi-Tree application (ver. 2.4, 6.6.2020)",
   "id": "root",
   "parents": null,
   "hide": "yes",
@@ -224,7 +224,7 @@ Openning file with invalid data content may bring to wrong application behaviour
       Data file name can be added to FMTree application URL in form (CSV or JSON file is required):
         http(s)://WebServerNameOrIP(:port)/index.html?data=(File/Path/)DataFileNameWithExtension
         for example: http://localhost:8000/index.html?data=data/VasilLevski/Test-data-pub.json
-        localhost can be used for local test purposes thanks to NodeJS simple web server for example
+        localhost can be used for local test purposes thanks to Phyton simple web server for example
       The two vertical markers in timeline show current (blue) and selected node (red) time
       Exported as PNG (in raster graphics format) chart will be magnified up to 16k pixels size
       For better resolution SVG (in vector graphics format) file can be used 
@@ -1536,10 +1536,10 @@ function update(source) {
         var format = d3.time.format("%d.%m.%Y");
         var bdate = d.bdate ? format(new Date(d.bdate)) : "?";
         if (bdate.startsWith("01.01.")) bdate = bdate.substring(6, bdate.length);
-        if (bdate.startsWith("1900-")) bdate = "1900";
+        if (bdate.startsWith("1900")) bdate = "?";
         var ddate = d.ddate ? format(new Date(d.ddate)) : "";
         if (ddate.startsWith("01.01.")) ddate = ddate.substring(6, ddate.length);
-        if (ddate.startsWith("1900-")) ddate = "1900";
+        if (ddate.startsWith("1900")) ddate = "?";
 
         var descr = (d.bdate && d.bdate != '' ? getDateDescr (d.type, bdDescr) + bdate + "<br>" : "") +
                     (d.ddate && d.ddate != '' ? getDateDescr (d.type, ddDescr) + ddate + "<br>" : "") +
@@ -1695,10 +1695,10 @@ function update(source) {
         var format = d3.time.format("%d.%m.%Y");
         var bdate = d.bdate ? format(new Date(d.bdate)) : "?";
         if (bdate.startsWith("01.01.")) bdate = bdate.substring(6, bdate.length);
-        if (bdate.startsWith("1900-")) bdate = "1900";
+        if (bdate.startsWith("1900")) bdate = "?";
         var ddate = d.ddate ? format(new Date(d.ddate)) : "";
         if (ddate.startsWith("01.01.")) ddate = ddate.substring(6, ddate.length);
-        if (ddate.startsWith("1900-")) ddate = "1900";
+        if (ddate.startsWith("1900")) ddate = "?";
 
         if (bdate != '') ret += '(' + bdate;
         if (ddate != '') ret += ' - ' + ddate;
@@ -1801,10 +1801,10 @@ function createTimeline () {
             var format = d3.time.format("%d.%m.%Y");
             var bdate = d.bdate ? format(new Date(d.bdate)) : "?";
             if (bdate.startsWith("01.01.")) bdate = bdate.substring(6, bdate.length);
-            if (bdate.startsWith("1900-")) bdate = "1900";
+            if (bdate.startsWith("1900")) bdate = "?";
             var ddate = d.ddate ? format(new Date(d.ddate)) : "";
             if (ddate.startsWith("01.01.")) ddate = ddate.substring(6, ddate.length);
-            if (ddate.startsWith("1900-")) ddate = "1900";
+            if (ddate.startsWith("1900")) ddate = "?";
 
             var ret = ('<table><tr valign="top">' + 
               (d.photo ? '<td class="no-borders" align="left" valign="middle"><img src="' + 
