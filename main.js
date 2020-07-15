@@ -335,32 +335,38 @@ Openning file with invalid data content may bring to wrong application behaviour
 4.    Converting Excel, CSV and JSON formatted data files
 4.1.  Install NodeJS (https://en.wikipedia.org/wiki/Node.js)
       Install NodeJS modules and dependencies they require
-      * xlsx2csv module (https://github.com/papnkukn/xlsx2csv)
+      * xlsx2csv module (https://github.com/zhs007/xlsx2csv/)
           npm install xlsx2csv -g
-      * json-2-csv NodeJS module (https://github.com/mrodrig/json-2-csv)
+      * json-2-csv NodeJS module (https://github.com/mrodrig/json-2-csv) - optional
           npm install json-2-csv -g
 4.2.  Check that instalation is o.k. - at command prompt run:
       * node -v     -> v12.11.1
-      * xlsx2csv -h -> Usage: xlsx2csv path ...
-      * csv2json -h -> Usage: csv2json <csvFile> [options]
-      * json2csv -h -> Usage: json2csv <jsonFile> [options]
+      * xlsx2csv  -h -> Usage: xlsx2csv path ...
+      * xlsx2json -h -> Usage: xlsx2csv path ...
+      * csv2json  -h -> Usage: csv2json <csvFile> [options]
+      * json2csv  -h -> Usage: json2csv <jsonFile> [options]
 4.3.  Go to data files folder 
       * cd Path/to/data/files
-4.4.  Convert Excel data file to CSV file
+4.4.  Convert Excel data file to JSON file (unreadable without line breaks)
+      For been exported Exel sheet with data has to be first in the list of sheets
+      At Command Prompt: xlsx2json fmtree-data.xlsx
+      CSV data file (fmtree-data.json) will be created / overwritten
+      drag-and-drop JSON file in FM Tree (fmtree-app.html) application
+4.5.  Convert Excel data file to CSV file
       For been exported Exel sheet with data has to be first in the list of sheets
       At Command Prompt: xlsx2csv fmtree-data.xlsx
       CSV data file (fmtree-data.csv) will be created / overwritten
+      drag-and-drop CSV file in FM Tree (fmtree-app.html) application
+4.6.  Convert CSV data file to JSON file (readable with line breaks) - optional
       open CSV data file with PSPad (or other text editor) and do:
       * Click on main menu -> Format -> UTF-8 (menu item has to be checked)
       * Click on main menu -> Format -> Unix (LF)
       * Click on main menu -> File -> Save or use keyboard combination "Ctrl+S"
-      drag-and-drop CSV file in FM Tree (fmtree-app.html) application
-4.5.  Convert CSV data file to JSON file
       At Command Prompt: csv2json fmtree-data.csv -o fmtree-data.json -f ","
       JSON data file (fmtree-data.json) will be created / overwritten
       Created file will be with UTF-8 character set and right delimeters
       drag-and-drop JSON file in FM Tree (fmtree-app.html) application
-4.6.  Convert JSON data file to CSV file
+4.7.  Convert JSON data file to CSV file (optional)
       At Command Prompt: json2csv fmtree-data-in.json -o fmtree-data-out.csv -f "," -E ""
       CSV data file (fmtree-data-out.csv) will be created / overwritten
       Created file will be with UTF-8 character set and right delimeters
