@@ -1,6 +1,6 @@
 // Static internal data with single root node (hidden)
 var defaultData = [{
-  "name": "Family Multi-Tree application (ver. 2.4, 06.06.2020)",
+  "name": "Family Multi-Tree application (ver. 2.5, 1.7.2020)",
   "id": "root",
   "parents": null,
   "hide": "yes",
@@ -10,7 +10,8 @@ var defaultData = [{
   "place": "Plovdiv, Bulgaria",
   // Will be used as startup map view when it is in root node
   "location": "42.14715,24.751004,11",
-  // Will be converted internally from location field of the file
+  // This field will be converted internally from location field of the file
+  // it has to exist in default data because it will not be converted like at file
   "loc": {
     "lat": 42.14715,
     "lon": 24.751004,
@@ -21,9 +22,17 @@ var defaultData = [{
   "photo": "data:image/x-icon;base64,AAABAAEAGxsAAAEAGABwCQAAFgAAACgAAAAbAAAANgAAAAEAGAAAAAAAAAAAADUAAAA1AAAAAAAAAAAAAAD////////+///////+/v7+///+//78//39/vz//vz//vn+/vf+//j9/vf9/vb+//j+/vn9/fz9/P79/f79/v39/vz+//3+//7///////////8AAAD//f/9//z7///+/v/9//37/v39/P/+/fv+//Lv79jOz6e8u3+4s3exq26ztnO6vH7Qzqfu8Nf+/fP9/vj7//j//v3+/f77/v3+//7//f8AAAAAAAD+/v/+//36///+/f///P78/fz9/vfm5cWxsXSrqnLExJve37zs6s7u7Nrn6NDe377DwZmoqW+zrnnn5sb+/vL//P39/f/+/v7///v//v3///4AAAD8//7////+/v/9///9/P38/OnHwY+tom3f2rb5+OP8/fH8+/P8/fn/+/3/+vj/+vH//PP7+Obe2bSopWrBwYz7++n9/vn///v//v38//z///4AAAD7/v///P///f/7//v09OCvr36SgFSLZE2VdGnCtLPXysecfHrv4uP25OifbG2ZaGbauL3qw8mYYlunfl6wnGa2sX/29d39/Pn+/P/7/v79/v4AAAD8/v/8/f7//fz8++m0r3/Ny6T77uiPUlaxenb/8+/t0dN9OT7RoqLhych+JCa0YFydYF7HfnyHJCPAcWqOb1LLxpOzsYH7++r//P79/v79/voAAAD7/vr7/vz+/vbDwJC/uojv6Nn37PDOkpuYVFb25uD53OCeSlOdSk301dCXQEGZPzzNioTotK2MLyqxV1XQoJj++N+6uYjFwpH+/vX7/vv+/v4AAAD8/fn9/frl5salp2/w6sxtU0rVwL/wydB0MjPp0MnStbuJPkypVFzBkZTMjZOyZ2qLSUq7j4y5goHFen5tLS3p1Mv7/eGnpW/m5sn5/vr8/f0AAAD+/f3//vKwr3Xb3Lvy5uB9WlX45N775OWJR0jWp6D57vHWtb7asbV+V1m5mZ7LrK+mjI7Yycr16u26nZ6liIT15+P6/vXb2rmzrnn+/vL9/fsAAAD9/vrv79SuqXL7+uv89Pm9oJ+afnrlz9KdXmKobGno3Nnv6ef/+vjr5ubw7Oz9/Pz++/3+/P76/Pz7/fz9/fn//fz9+v36+eSpqGzw79T+/vwAAAD8/vjQzqTDw5r8/vX9/Pz68fDFrrOojpSigICifXuljIp7aWjk4OD7/f35/f77/f7+/P7++/77/fv7/vv6/Pr+/f7+/P7///G/wZfO0aj+/voAAAD8/vnBuoLj4sL7/vn4/vz2/Pv6/P39/P36/Pv8/fr18e6Zi4va1dX9/Pz6/P38/P78/P7++////fv7/v34/P78/v76/vz+//ji38C6voX9//gAAAD8/vi7s3Ts6tH//vz9/fz5//37/f7+/P77/fz7/vv8/fv8+/z9+/z7/P74/P37/f3/+/z//f7+/fz7/v75/v/7/f74/vz4/vrq6NC2t3X8//YAAAD8/vesrGzt7Nf//P3//f/9/vz8/f3+/P///fv9/fr3/Pv3/Pz9+//9+v76+/75/vz8/fv8/v38/v77/v37/v77/P/4/f34/vrt7NWyr23+//cAAAD//vi3s3jr6dD//fv++/79/Pz7/v77/P77/Pz4/fz3/f32+vr9/P3/+/3+/f36+/v4/fz4/f37/f3+//7+/v78/P/9/v37//jp6cy4tnj//vgAAAD//vi8uYTd4MH8/vn5/f33/f34/f3+/f7/+/79+/79+vvx7OnTxsHs3tv//Pn9+vv++fz/+vv/+ff/+Pf++/z8/f3+//z+/vff4L+9vYX9/vkAAAD+//rPzqXAwpn//vT9/f38+/zOxMeZeHubdnvKvr//+vrOvr5pRkeFYGHy3d7k0tPOtbjq0tWVb26liYjk3+D8/fz+/vv///TBwZbPz6f9/voAAAD7//rx79WopXL6+en8/f38+vz37fGoc3mVVljx5Nz9+/f39PXy5OqwkZmyjJLXqKiUU1Hku751MTXUqqj39fP8/f78/v35+uWnp2/v79b///wAAAD4/f7//vW0r3nd3rn6/fb06O6mjZfan6d1MTHp1sv18ur1+Pf+9/377vSufIDXjIuVMy/aj5CjU1XAjIj/+fj+/f7+/vna27iwsnX///H+/v0AAAD8/fz+/Pzl5cOmqWz9/ubn1NpjPUb4x81/MDOsaGWKbWje1dTQub3Xv8TXp6q9X2LBY2HKfXuzW1qjYFr/8e3//v39/uimpnHm5cT+/vr///8AAAD///f4/vj9/vPBwpC8vI3v3dZsS1L31NqsXGO4aGvKsa7dy8mIV1fStrXfwcCKLzK+e3ftw8SYREaMOjT+5dz///G6u4rDxJL//fj9/f7///8AAAD///j6//v+/f77++yxsYDPyKOvmZSUdny2dX6cWl755uS6n5uaYWOid3bnx8KEODe3gn7+7/LOnqBnIBrszLrJy56usn/7++j+/fv+/f7///8AAAD+/v3//f//+////f3z9d6zr3+/uY63p5KZdnSPaGqfgoGUenfXvr7LsbCdfnuQaGbLrKz/+Pn78uu2lHmdglK1s4H09uH6//z8/vv//v7//v4AAAD+//7//f///f////75//v6++nEw5KpqnHf2Lb69OL+9+38+PD7/fT7/fb99vT99vL/+vH7+ubc3riopGzIwZD9/Oj+/vv6//37//////////8AAAD+//v///4AAAD+//75/v37/vv+/vTm5sa0sXyupnTFwprf4cDp6c7s7NTq6s/f4L/EwpqrqXKus3bn5sX///P9//n+/f7//P/9/v////3///8AAAD7///////+//7////+/v76/fv6/fv9/fv//fXv7tXQz6a5u4a2tXyzrnK4t3a9v4TP0Kfw7dj/+/T++/3+/v/8//3+/P//+v/+/v////3///8AAAD7//79///9//z//f79/P/7/f/7/f36/fz8/fv9//r6/fv+/vr8//j8/vf8/fn//vj+/vb5//b3/f34/f/8/vz+//z9//z///v9//wAAAD///8AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAEA=",
   "description": "",
   "font": "12px sans-serif",
-  // Value in range 20 - 40 pixels when it is in root node
-  // Value in range 1.0 - 2.0 as scale factor when it is in node to highlight
-  "circle": "40,10,16",
+  // First value in range 20 - 60 pixels when it is in root node
+  // First value in range 1.0 - 2.0 as scale factor when it is in node to highlight
+  // next 2 values values are horisontal and vertical inter-text space in pixels,
+  // next 2 values values are enable vertical multi-tree view, enable stacked the same level nodes,
+  // last value is a vertical inter-node multiplier (default: 1 for horizontal and 3 for vertical views)
+  "circle": "40,10,16,0,0,1",
+  // This field is only informative and used in Excel file only to enable/disable the private data
+  // the numbers are applied to bdate, ddate, place, location, photo and description fields respectively
+  // the numbers for bdate and ddate fields can be: 0 (yyyy-mm-dd), 1 (yyyy-), 2 (-mm-dd) and 3 (none)
+  // for all other fields the number has to be 0 (enable) or 1 (disable) corresponding field
+  "privacy": "0,0,0,0,0,0",
 /*Optional fields for language localization (data file root node only)
   Will overwrite date descriptors and timeline band labels
   Example is exemplary for Bulgarian language:
@@ -141,13 +150,15 @@ This software is implemented thanks to:
 
 It works well with:
 * Google Chrome 14 and higher,
-* Mozila Firefox 7 and higher;
+* Mozila Firefox 7 and higher,
+* MS Edge  ver. 83 (on Windows 10 64-bits),
 * localy - file loaded directly in browser,
 * globally - via web server over Internet.
 
 Private CSV/JSON data can be secured by:
 * using local files only or
-* protected Internet place.</pre>`
+* protected Internet place.
+</pre>`
 };
 
 // Help strings
@@ -174,7 +185,8 @@ MS Excel or other application supporting Excel format can be used for facilitati
 MS Excel file is not required if working with CSV or JSON formatted file is acceptable
 Data file name can be any but extension has to be *.csv or *.json respectively
 Data file content is not verified for valid FM Tree application data
-Openning file with invalid data content may bring to wrong application behaviour</pre>`
+Openning file with invalid data content may bring to wrong application behaviour
+</pre>`
   },
   {
     title: 'Help',
@@ -228,25 +240,27 @@ Openning file with invalid data content may bring to wrong application behaviour
       The two vertical markers in timeline show current (blue) and selected node (red) time
       Exported as PNG (in raster graphics format) chart will be magnified up to 16k pixels size
       For better resolution SVG (in vector graphics format) file can be used 
-      SVG file can be opened in and printed from a web browser for example</pre>`
+      SVG file can be opened in and printed from a web browser for example
+      </pre>`
   },
   {
     title: 'Help',
     html:  `<pre style='padding: 0 0 0 25%; text-align:left;'>
 2.    Use Excel to enter, save and edit FM Tree data (for example fmtree-data.xlsx)
 2.1.  Following header row and node record with id/parents fields "root,null" are required
-      name,id,parents,hide,type,bdate,ddate,place,location,photo,description,font,circle
-      Dog & Cat Family Trees,root,null,yes,r,,,Plovdiv,"42.129,24.788,11",,,20px Monotype Corsiva,40
+      name,id,parents,hide,type,bdate,ddate,place,location,photo,description,font,circle,privacy
+      Family Trees,root,null,yes,r,,,Plovdiv,"42.129,24.788,11",,,20px Monotype Corsiva,"40,8,16,1,1,4","0,0,0,0,0,0"
+      The field privacy is used only in Excel file and is optional for root node only
       Name field of root node will be used as application and window/tab title
       Photo field of root node will be used as window/tab icon
       Description field of root node will be used to store some notes about data
 2.2   Multilanguage support can be done via additional fields in data for root node only
       English is default language for menu items and all text labels and descriptors
-      Following additional fields for root node will overwrite date descriptors
+      Following additional fields for the root node only will overwrite date descriptors
       bdDescr_m,bdDescr_w,bdDescr_f,bdDescr_c,ddDescr_m,ddDescr_w,ddDescr_f,ddDescr_c
-      Following additional fields for root node will overwrite timeline labels
+      Following additional fields for root node only will overwrite timeline labels
       tlLabel_g,tlLabel_f,tlLabel_p
-      Menu items, left corner label text and generation names can not be changed with data file
+      Menu items, left corner label text and generation names can not be changed from the data file
 2.3.  NodeID has to be unique starting with a letter
       Built in image2dataURL.html UUID generator can be used
       Use id/parents (both are required for any node) fields to describe hierarchy
@@ -276,10 +290,6 @@ Openning file with invalid data content may bring to wrong application behaviour
       Font field when applicable consist a space separated font type, size and family
       Font field in root node is applicable to all nodes texts and will overwrite it for other once
       In photo field only Data URL image source with Base64 encodding is acceptable
-      Circle field for root node only has three comma separated numbers: 
-        circle radius (for all circles), horisontal and vertical inter text space
-        for highlighted node(s) circle field is a single scale value for the circle
-        for all other nodes circle field has to be empty
       </pre>`
   },
   {
@@ -292,28 +302,39 @@ Openning file with invalid data content may bring to wrong application behaviour
                         missing - like no
         for other node: yes     - hide the node
                         other   - show the node
-2.10.  The field type can be a single letter: e(mpty), r(oot), m(en), w(omen),  f(amily), c(ouple), b(oy) or g(irl)
+2.10. The field type can be a single letter: e(mpty), r(oot), m(en), w(omen),  f(amily), c(ouple), b(oy) or g(irl)
       In such case correct date description and  built-in icon will be used if photo is missing for any none hidden node
       Empty, missing or other letter for type field will make usage of blank image for none hidden nodes without photo
       Type field has no influence on hidden nodes
-2.11.  The circle field is a number
-        for root node - all circles will have radius in pixels equal to given number (40 is a good value)
-        for other nodes - the node circle will be highlighted and scaled with given factor (1.5 is a good value)
-      If the circles radius, trees depth and/or number of nodes per level are big enough chart can run out of visible area
-      To make all nodes visible use mouse zoom-in/out and pan functionality
-2.12. Location field when applicable consists of a comma separated list of 3 numbers (latitude, longitude, zoom factor)
-      latitude and longitude are floating point numbers and can be taken from Google Maps
-      Zoom field is integer number and 10 - 16 is a good value range. All of 3 numbers are required
-      Pplace field is text like "Town, Contry" and will be shown as advanced information in the tooltip only
-2.13. Date fields bdate (birthday) and ddate (death day) have to be in "yyyy-mm-dd" format in CSV/JSON data files
-      Short form like "yyyy-mm-" or "yyyy-" can also be used when parts of date is unknown (do not omit last dash char)
+2.11. Date fields bdate (birthday) and ddate (death day) have to be in "yyyy-mm-dd" format in CSV/JSON data files
+      Short forms like "yyyy-mm-", "yyyy-" or "-mm-dd" can also be used (do not omit first/last dash char)
       There are two sets of date descriptors for each person, family/couple
         descriptors for birthday  - (m)en: 'born', (w)omen: 'born', (f)amily: 'married', (c)ouple: 'cohabitation'};
         descriptors for death day - (m)en: 'dead', (w)omen: 'dead', (f)amily: 'divorced', (c)ouple: 'separated'};
-        Persons descriptors can be different for both men and women depending on language specifics
+        Persons descriptors can be different for both men/boy and women/girl depending on language specifics
       For being correctly exported to CSV the special Excel Date type has to be converted to text using formula:
         TEXT(DateCell;"yyyy-mm-dd") - where DateCell is cell containing Date type (for example in other Excel sheet)
-        Text format for date fields is real alternative in case of problems to export data from Excel</pre>`
+        Text format for date fields is real alternative in case of problems to export data from Excel
+2.12. The fields place (like "Town, Contry") and description (can be long) will be displaied in the node tooltip only
+2.13. Location field when applicable consists of a comma separated list of 3 numbers (latitude, longitude, zoom factor)
+      latitude and longitude are floating point numbers and can be taken from Google Maps
+      Zoom field is integer number and 10 - 16 is a good value range. All of 3 numbers are required
+2.14. The field circle for root node only has six comma separated numbers: 
+        circle radius (for all circles), horizontal and vertical inter-text space in pixels,
+        enable vertical multi-tree view, enable stacked the same level nodes and vertical inter-node multiplier
+      The field circle for the highlighted node(s) is a single scale factor for the circle
+      The field circle for all other nodes has to be empty
+2.15. The field privacy has six comma separated 0/1 numbers for enable/disable private data publishing
+        this field is used in Excel file only for filtering some of the private data
+        they are applied to bdate, ddate, place, location, photo and description fields respectively
+        numbers for bdate and ddate fields can be: 0 (yyyy-mm-dd), 1 (yyyy-), 2 (-mm-dd) and 3 (none)
+        for the root node the rules are applied for all records by copying in the column
+        for the root node the rules can be visible in CSV and JSON files to inform for filtering
+        for any other node the rules have to be a copy of the root field or overwritten
+        for any other node the rules are applied for the curent record only
+        for any other node the field has to be empty in "For Converting" page of the Excel file
+        Excel has problems with dates before year 1900 interpreting them as text and privisy logic may not work
+      </pre>`
   },
   {
     title: 'Help',
@@ -321,13 +342,14 @@ Openning file with invalid data content may bring to wrong application behaviour
 3.    Preparation of photos for embedding into data files (preferable in JPEG format)
 3.1.  Use any image editor to prepare photo files with 72 DPI for example
 3.2.  Resize and crop it to fit well centered face in 300x300 pixels for example
-3.3.  Use image2dataURL.html to convert the photo to Data URL
+3.3.  Use image2dataURL.html application to convert the photo to Data URL
 3.4.  Data URL size should not be more the 32kB in length (limited by Excel)
-3.5.  Copy & Paste photo's Data URL quoted into the photo field of the data file
+3.5.  Copy & Paste photo Data URL quoted into the photo field of the data file
       "photo": "data:image/jpeg;base64,/9j/4AAQS...." (like in JSON format for example)
       Quotation marks are obligatory for CSV/JSON but do not use them in Excel data files
 3.6.  In case of photo absence (empty or missing field) internal icon will be used
-3.7.  Image embedded in the photo field of the root node will be used as window/tab icon</pre>`
+3.7.  Image embedded in the photo field of the root node will be used as window/tab icon
+      </pre>`
   },
   {
     title: 'Help',
@@ -607,8 +629,11 @@ Number.prototype.round = function(places) {
 
 // Export SVG chart as PNG image and save to local file
 
+var landscapeOrientation = true;
+
 var svgOffsetX = 0;
 var svgOffsetY = 0;
+var svgOffsetY1 = 0;
 var circleRadius = 40;
 var fileNameToSave = '';
 async function clickSaveChart(type) {
@@ -626,7 +651,7 @@ async function clickSaveChart(type) {
   var bbox = svgNode.getBBox();
 
   // Size of SVG graphics
-  var swidth = bbox.width + 2 * svgOffsetY;
+  var swidth = bbox.width + svgOffsetY1; // + 2 * svgOffsetY;
   var sheight = bbox.height + 2 * circleRadius + 20;
 
   // Set multiplier to fit 16k size limit
@@ -639,7 +664,7 @@ async function clickSaveChart(type) {
   // Add text for exporting images - will be deleted after page reload
   svg.append("text")
       .attr("class", "text")
-      .attr("dx", 0)
+      .attr("dx", 80 - svgOffsetY - svgOffsetY1)
       .attr("dy", bbox.height - svgOffsetX + 80)
       .style("fill-opacity", 1)
       .attr("text-anchor", function(d) { return "left"; })
@@ -648,14 +673,14 @@ async function clickSaveChart(type) {
 
   svg.append("text")
       .attr("class", "text")
-      .attr("dx", bbox.width - 2 * svgOffsetY - 0)
+      .attr("dx", bbox.width - svgOffsetY - svgOffsetY1 - 80)
       .attr("dy", bbox.height - svgOffsetX + 80)
       .style("fill-opacity", 1)
       .attr("text-anchor", function(d) { return "right"; })
       .style("font", textFont.replace(/\d+px/, "15px"))
       .text('© ChRadev');
 
-  svgNode.setAttribute('transform', 'translate(' + (svgOffsetY * 2) + ','+ svgOffsetX + ')');
+  svgNode.setAttribute('transform', 'translate(' + (svgOffsetY + svgOffsetY1) + ','+ svgOffsetX + ')');
   // Serialize SVG to XML string
   var xmlString = d3.select("svg")
       .attr({
@@ -956,7 +981,7 @@ var tree = d3.layout.tree()
 function zoom() {
   svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
 }
-var zoomListener = d3.behavior.zoom().scaleExtent([0.1, 5]).on("zoom", zoom);
+var zoomListener = d3.behavior.zoom().scaleExtent([0.05, 5]).on("zoom", zoom);
 
 var nodes;
 
@@ -974,20 +999,22 @@ function clickFitChart() {
   var minY = d3.min(yArray);
   var maxY = d3.max(yArray);
 
-  var scaleMinX = 0.96 * Math.abs(graph.width / (maxY - minY));
-  var scaleMinY = 0.90 * Math.abs(graph.height / (maxX - minX));
+  var scaleMinX = 0.90 * Math.abs((landscapeOrientation ? graph.width : graph.height) / (maxY - minY));
+  var scaleMinY = 0.90 * Math.abs((landscapeOrientation ? graph.height : graph.width) / (maxX - minX));
   var scaleMin = Math.min(scaleMinX, scaleMinY);
 
-  var startX = (graph.width  - (maxY - minY) * scaleMin) / 2;
-  // Vertical alignment is a problematic!
-  var startY = 0.86 * svgOffsetX * scaleMin + (graph.height - (maxX - minX) * scaleMin) / 2;
+  console.log(minX, minY, scaleMin);
+
+  var startX = ((landscapeOrientation ? graph.width : graph.height) - (maxY - minY) * scaleMin) / 2 - minY * scaleMin / 0.95;
+  // Vertical alignment may have a problematic!
+  var startY = ((landscapeOrientation ? graph.height : graph.width) - (maxX - minX) * scaleMin) / 2 - minX * scaleMin / 0.95;
 
   // Set params to zoomListener
   zoomListener.translate([startX, startY]);
   zoomListener.scale(scaleMin);
 
   // Same as in the zoom function - execute to fit
-  svg.attr("transform", "translate(" + [startX, startY] + ")scale(" + scaleMin + ")");
+  svg.attr("transform", "translate(" + [(landscapeOrientation ? startX : startY), (landscapeOrientation ? startY : startX)] + ")scale(" + scaleMin + ")");
   svg.call(zoomListener);
 }
 
@@ -1003,17 +1030,10 @@ svg = d3.select('.chart')
           .call(zoomListener)
           .append("svg:g");
 
-
 var diagonal = d3.svg.diagonal()
-  .projection(function(d) {
-    return [d.y, d.x];
-  });
-
-// Overwrite the funtion for preparing the link path
-function elbow(d, i) {
-    return "M" + d.source.y + "," + d.source.x + "H" + d.target.y
-            + "V" + d.target.x  + "H" + d.target.y
-};
+      .projection(function(d) {
+        return landscapeOrientation ? [d.y, d.x] : [d.x, d.y];
+      });
 
 /*
   // extend d3 with moveToFront function
@@ -1197,7 +1217,9 @@ function readFile(files) {
 var root;
 var textFont = "12px sans-serif";
 var charLen = 10;
+var layerStacked = false;
 var textOff = 16;
+var textOff1 = 1;
 // Function to convert read data file in tree data structure
 // and initialize SVG and other general staff
 function convertData (fdata) {
@@ -1252,6 +1274,10 @@ function convertData (fdata) {
   if (numParams[0]) circleRadius = 1 * numParams[0];
   if (numParams[1]) charLen = 1 * numParams[1];
   if (numParams[2]) textOff = 1 * numParams[2];
+  if (numParams[3] && numParams[3] === '1') { landscapeOrientation = false; textOff1 = 3; };
+  if (numParams[4] && numParams[4] === '1') layerStacked = true;
+  if (numParams[5]) textOff1 = 1 * numParams[5];
+
   if (root.font && root.font != '') textFont = root.font;
 
   if (root.bdDescr_m && root.bdDescr_m != '') bdDescr.m = root.bdDescr_m;
@@ -1359,6 +1385,14 @@ function getDateDescr (field, descr) {
          field == "c" ? descr.c + ": " : "";
 };
 
+function getDate(date) {
+  var format = d3.time.format("%d.%m.%Y");
+  var list = date.match(/\d+/g);
+  return !date ? "?" : (list.length == 3 ? format(new Date(date)) : 
+                       (list.length == 2 && date.startsWith('-') ? list[1] + '.' + list[0] : 
+                       (list.length == 1 && date.substr(-1) === "-" ? list[0] : "?")));
+};
+
 function update(source) {
   // Empty dataPoints arrea and remove marker layer from the map
   dataPoints = [];
@@ -1381,73 +1415,128 @@ function update(source) {
 
   var dyPerDepth = [];
   var maxItemsPerDepth = 0;
-  // recalculate the x poition of each node after the removal
   _.each(nodes, function (o, i) {
       var itemsOfTheSameDepth = _.filter(nodes, { depth: o.depth });
-      var indexOfTheCurrentItem = _.indexOf(itemsOfTheSameDepth, o);
-      var intervalPerDepth = 3 * textOff + 2 * circleRadius;
-      if (nodes[i].id == "root" || nodes[i].hide == "yes") {
-        nodes[i].x = graph.height / 2
-      }
-      else {
-        if (itemsOfTheSameDepth.length % 2 == 0) {
-          if (indexOfTheCurrentItem < Math.floor(itemsOfTheSameDepth.length / 2)) nodes[i].x = graph.height / 2 - intervalPerDepth * (-0.5 + itemsOfTheSameDepth.length / 2 - indexOfTheCurrentItem)
-          else nodes[i].x = graph.height / 2  + intervalPerDepth * (0.5 + indexOfTheCurrentItem - itemsOfTheSameDepth.length / 2)
-        } else {
-          if (indexOfTheCurrentItem == Math.floor(itemsOfTheSameDepth.length / 2)) nodes[i].x = graph.height / 2 
-          else if (indexOfTheCurrentItem < Math.floor(itemsOfTheSameDepth.length / 2)) nodes[i].x = graph.height / 2  - intervalPerDepth * (Math.floor(itemsOfTheSameDepth.length / 2) - indexOfTheCurrentItem)
-          else nodes[i].x = graph.height / 2 + intervalPerDepth * (indexOfTheCurrentItem - Math.floor(itemsOfTheSameDepth.length / 2))
-        }
-      }
-      // add vertical offset to each node's x
-      nodes[i].x = nodes[i].x - 0.02 * graph.height;
-      if (nodes[i].x < 0 && svgOffsetX < -nodes[i].x) svgOffsetX = -nodes[i].x + circleRadius + 10;
 
       // calculate man label number of characters
       var maxLabelLen = 26;
-
-      if (maxItemsPerDepth < itemsOfTheSameDepth.length - 2) maxItemsPerDepth = itemsOfTheSameDepth.length - 2;
-
       for (var index = 0; index < itemsOfTheSameDepth.length; ++index) {
           maxLabelLen = Math.max(maxLabelLen, itemsOfTheSameDepth[index].name.length);
       }
-      dyPerDepth.push({depth: o.depth, nodes: itemsOfTheSameDepth.length, maxlen: maxLabelLen});
+      dyPerDepth.push({depth: o.depth, nodes: itemsOfTheSameDepth.length - 2, maxlen: maxLabelLen});
 
+      if (maxItemsPerDepth < (itemsOfTheSameDepth.length - 2)) maxItemsPerDepth = itemsOfTheSameDepth.length - 2;
   });
 
   dyPerDepth = _.uniq(dyPerDepth, "depth");
 
   // calculate max label's length
-  var maxLabelLen = 0;
+  var maxLabelLen = 26;
   nodes.forEach(function(o, i) {
-    maxLabelLen = Math.max(maxLabelLen, 26, nodes[i].name.length);
+    if (nodes[i].id == 'root') return;
+    maxLabelLen = Math.max(maxLabelLen, nodes[i].name.length);
   });
 
-  // calculate fixed horisontal offset and dy step
-  svgOffsetY = circleRadius + 2;
+  var addOffset = 0; // for the chart
+  var addOffset1 = 2 * circleRadius; // for the file
 
-  // Normalize for fixed-depth.
-  nodes.forEach(function(d) {
-    var dx = d.x + 0.02 * graph.height - graph.height / 2;
-    if (d.depth < 2) {
-      d.y = -svgOffsetY;
-    } else if (d.depth == 2) {
-      var itemCurr = _.filter(dyPerDepth, { depth: 2 });
-      d.y = Math.max(circleRadius, charLen * Math.max(13, (itemCurr[0].maxlen / 2)));
-      d.x = dx * maxItemsPerDepth / (itemCurr[0].nodes - 2) - 0.02 * graph.height + graph.height / 2;
-    
-    } else {
-      var itemCurr = _.filter(dyPerDepth, { depth: 2 });
-      var dy = Math.max(circleRadius, charLen * Math.max(13, (itemCurr[0].maxlen / 2)));
-      for (var index = 3; index <= d.depth ; ++index) {
-        var itemCurr = _.filter(dyPerDepth, { depth: index });
-        var itemPrev = _.filter(dyPerDepth, { depth: index - 1 });
-        dy += Math.max(circleRadius * 2, charLen * Math.max(26, (itemPrev[0].maxlen / 2 + itemCurr[0].maxlen / 2)));
+  if (landscapeOrientation) { // Landscape orientation
+    // recalculate the x poition of each node after the removal
+    _.each(nodes, function (o, i) {
+        var itemsOfTheSameDepth = _.filter(nodes, { depth: o.depth });
+        var indexOfTheCurrentItem = _.indexOf(itemsOfTheSameDepth, o);
+        var itemsOfTheSameDepthLength = itemsOfTheSameDepth.length;
+        var itemCurr = _.filter(dyPerDepth, { depth: o.depth });
+        var intervalPerDepth = 3 * textOff + 2 * circleRadius;
+        if (nodes[i].id == "root" || nodes[i].hide == "yes") {
+          nodes[i].x = graph.height / 2;
+        }
+        else {
+          if (itemsOfTheSameDepth.length % 2 == 0) {
+            if (indexOfTheCurrentItem < Math.floor(itemsOfTheSameDepthLength / 2)) nodes[i].x = graph.height / 2 - intervalPerDepth * (itemsOfTheSameDepthLength / 2 - indexOfTheCurrentItem - 0.5);
+            else nodes[i].x = graph.height / 2  + intervalPerDepth * (indexOfTheCurrentItem - itemsOfTheSameDepthLength / 2 + 0.5);
+          } else {
+            if (indexOfTheCurrentItem == Math.floor(itemsOfTheSameDepthLength / 2)) nodes[i].x = graph.height / 2;
+            else if (indexOfTheCurrentItem < Math.floor(itemsOfTheSameDepthLength / 2)) nodes[i].x = graph.height / 2  - intervalPerDepth * (Math.floor(itemsOfTheSameDepthLength / 2) - indexOfTheCurrentItem);
+            else nodes[i].x = graph.height / 2 + intervalPerDepth * (indexOfTheCurrentItem - Math.floor(itemsOfTheSameDepthLength / 2));
+          }
+        }
+        // add vertical offset to each node's x
+        nodes[i].x = nodes[i].x - addOffset;
+        if (nodes[i].x < 0 && svgOffsetX < (-nodes[i].x + addOffset1)) svgOffsetX = -nodes[i].x + addOffset1;
+    });
+    // calculate fixed horisontal offset and dy step
+    svgOffsetY = circleRadius + 2;
+    // Normalize for fixed-depth.
+    nodes.forEach(function(d) {
+      if (d.id != "root" && d.hide != "yes") {
+        var dx = textOff1 * (d.x - graph.height / 2 + addOffset);
+        var itemCurr = _.filter(dyPerDepth, { depth: d.depth });
+        if (!layerStacked) d.x = dx * maxItemsPerDepth / itemCurr[0].nodes + graph.height / 2 - addOffset;
       }
-      d.y = dy;
-      d.x = dx * maxItemsPerDepth / (itemCurr[0].nodes - 2) - 0.02 * graph.height + graph.height / 2;
-    }
-  });
+      if (d.depth < 2) {
+        d.y = -svgOffsetY;
+      } else if (d.depth == 2) {
+        var itemCurr = _.filter(dyPerDepth, { depth: 2 });
+        d.y = Math.max(circleRadius, charLen * Math.max(13, (itemCurr[0].maxlen / 2)));
+      
+      } else {
+        var itemCurr = _.filter(dyPerDepth, { depth: d.depth });
+        var dy = Math.max(circleRadius, charLen * Math.max(13, (itemCurr[0].maxlen / 2)));
+        for (var index = 3; index <= d.depth ; ++index) {
+          var itemCurr = _.filter(dyPerDepth, { depth: index });
+          var itemPrev = _.filter(dyPerDepth, { depth: index - 1 });
+          dy += Math.max(circleRadius * 2, charLen * Math.max(26, (itemPrev[0].maxlen / 2 + itemCurr[0].maxlen / 2)));
+        }
+        d.y = dy;
+      }
+    });
+  } else {  // Portrait orientation
+    _.each(nodes, function (o, i) {
+        var itemsOfTheSameDepth = _.filter(nodes, { depth: o.depth });
+        var indexOfTheCurrentItem = _.indexOf(itemsOfTheSameDepth, o);
+        var itemsOfTheSameDepthLength = itemsOfTheSameDepth.length;
+//        var itemCurr = _.filter(dyPerDepth, { depth: o.depth });
+        var intervalPerDepth = Math.max(charLen * maxLabelLen, 2 * circleRadius);
+        if (nodes[i].id == "root" || nodes[i].hide == "yes") {
+          nodes[i].x = graph.width / 2;
+        }
+        else {
+          if (itemsOfTheSameDepthLength % 2 == 0) {
+            if (indexOfTheCurrentItem < Math.floor(itemsOfTheSameDepthLength / 2)) nodes[i].x = graph.width / 2 - intervalPerDepth * (itemsOfTheSameDepthLength / 2 - indexOfTheCurrentItem - 0.5);
+            else nodes[i].x = graph.width / 2  + intervalPerDepth * (indexOfTheCurrentItem - itemsOfTheSameDepthLength / 2 + 0.5);
+          } else {
+            if (indexOfTheCurrentItem == Math.floor(itemsOfTheSameDepthLength / 2)) nodes[i].x = graph.width / 2;
+            else if (indexOfTheCurrentItem < Math.floor(itemsOfTheSameDepthLength / 2)) nodes[i].x = graph.width / 2 - intervalPerDepth * (Math.floor(itemsOfTheSameDepthLength / 2) - indexOfTheCurrentItem);
+            else nodes[i].x = graph.width / 2 + intervalPerDepth * (indexOfTheCurrentItem - Math.floor(itemsOfTheSameDepthLength / 2));
+          }
+        }
+        // add vertical offset to each node's x
+        if (nodes[i].x < 0 && svgOffsetY < -nodes[i].x) svgOffsetY = -nodes[i].x;
+    });
+    // calculate fixed horisontal offset and dy step
+    svgOffsetX = circleRadius + 2;
+    svgOffsetY = svgOffsetY;
+    svgOffsetY1 = charLen * maxLabelLen / 2;
+    // Normalize for fixed-depth.
+    nodes.forEach(function(d) {
+      if (d.id != "root" && d.hide != "yes") {
+        var dx = d.x - graph.width / 2;
+        var itemCurr = _.filter(dyPerDepth, { depth: d.depth });
+        if (!layerStacked) d.x = dx * maxItemsPerDepth / itemCurr[0].nodes + graph.width / 2;
+      }
+
+      var dy = (2 * circleRadius + 3 * textOff) * textOff1;
+      if (d.depth < 2) {
+        d.y = -svgOffsetX;
+      } else if (d.depth == 2) {
+        d.y = 2 * circleRadius;
+      } else {
+        var itemCurr = _.filter(dyPerDepth, { depth: d.depth });
+        d.y = dy * (d.depth - 2) + 2 * circleRadius;
+      }
+    });
+  }
 
   var links = tree.links(nodes);
 
@@ -1476,7 +1565,8 @@ function update(source) {
   var nodeEnter = node.enter().append("svg:g")
     .attr("class", "node")
     .attr("transform", function(d) {
-      return "translate(" + d.y + "," + d.x + ")";
+      if (landscapeOrientation) return "translate(" + d.y + "," + d.x + ")";
+      else return "translate(" + d.x + "," + d.y + ")"; 
     })
     .on('mouseup', function (d) {
         // remove all colour paths
@@ -1526,8 +1616,9 @@ function update(source) {
         map.getView().setZoom(+root.loc.zoom);
       }
       timeSelected = null;
-      if (d.bdate && d.bdate != '') {
-        timeSelected = d.bdate;
+      if (d.bdate && d.bdate != '' && !d.bdate.startsWith('-') && (d.bdate.substr(-1) === "-" || d.bdate.match(/\d+/g).length == 3)) {
+        var bdate = d.bdate.substr(-1) !== "-" ? d.bdate : d.bdate.match(/\d+/g).length == 1 ? d.bdate + "1-1" : d.bdate.match(/\d+/g).length == 2 ? d.bdate + "1" : d.bdate;
+        timeSelected = bdate;
       }
     })
     .on('mouseover', function (d) { // set tooltip visible
@@ -1538,17 +1629,10 @@ function update(source) {
         }
     })
     .on('mousemove', function (d) { // set tooltip content
-
-        var format = d3.time.format("%d.%m.%Y");
-        var bdate = d.bdate ? format(new Date(d.bdate)) : "?";
-        if (bdate.startsWith("01.01.")) bdate = bdate.substring(6, bdate.length);
-        if (bdate.startsWith("1900")) bdate = "?";
-        var ddate = d.ddate ? format(new Date(d.ddate)) : "";
-        if (ddate.startsWith("01.01.")) ddate = ddate.substring(6, ddate.length);
-        if (ddate.startsWith("1900")) ddate = "?";
-
-        var descr = (d.bdate && d.bdate != '' ? getDateDescr (d.type, bdDescr) + bdate + "<br>" : "") +
-                    (d.ddate && d.ddate != '' ? getDateDescr (d.type, ddDescr) + ddate + "<br>" : "") +
+        var bdate = getDate(d.bdate ? d.bdate : "");
+        var ddate = getDate(d.ddate ? d.ddate : "");
+        var descr = (d.bdate ? getDateDescr (d.type, bdDescr) + bdate + "<br>" : "") +
+                    (d.ddate ? getDateDescr (d.type, ddDescr) + ddate + "<br>" : "") +
                     (d.place && d.place != '' ? d.place + "<br>" : "");
 
         tooltip.html('<table><tr vertical-align="top"><td class="no-borders" align="center" vertical-align="top">' + 
@@ -1580,18 +1664,19 @@ function update(source) {
     })
     .style("fill", function(d) {
       // Fill events data for both groups in timeline
-      if (d.bdate && d.bdate != '') {
+      if (d.bdate && d.bdate != '' && !d.bdate.startsWith('-') && (d.bdate.substr(-1) === "-" || d.bdate.match(/\d+/g).length == 3)) {
+        var bdate = d.bdate.substr(-1) !== "-" ? d.bdate : d.bdate.match(/\d+/g).length == 1 ? d.bdate + "1-1" : d.bdate.match(/\d+/g).length == 2 ? d.bdate + "1" : d.bdate;
         var dataEvent = {
             type:  TimelineChart.TYPE.POINT,
-            at:    new Date(d.bdate),
+            at:    new Date(bdate),
 //            type:  TimelineChart.TYPE.INTERVAL,
-            from:  new Date(d.bdate),
-            to:    new Date(d.ddate),
+            from:  new Date(bdate),
+//            to:    new Date(d.ddate),
             label: d.name && d.name != '' ? d.name : '',
             name:  d.name && d.name != '' ? d.name : '',
             photo: d.photo && d.photo != '' ? d.photo : '',
-            bdate: d.bdate && d.bdate != '' ? new Date(d.bdate) : '',
-            ddate: d.ddate && d.ddate != '' ? new Date(d.ddate) : '',
+            bdate: d.bdate && d.bdate != '' ? d.bdate : '',
+            ddate: d.ddate && d.ddate != '' ? d.ddate : '',
             descr: d.type && d.type != '' ? d.type : '',
             place: d.place && d.place != '' ? d.place : ''
 //            color: colors(d.id.split('-')[0])
@@ -1698,17 +1783,12 @@ function update(source) {
         var ret = '';
         if (d.id == 'root' || d.hide == "yes") return ret;
 
-        var format = d3.time.format("%d.%m.%Y");
-        var bdate = d.bdate ? format(new Date(d.bdate)) : "?";
-        if (bdate.startsWith("01.01.")) bdate = bdate.substring(6, bdate.length);
-        if (bdate.startsWith("1900")) bdate = "?";
-        var ddate = d.ddate ? format(new Date(d.ddate)) : "";
-        if (ddate.startsWith("01.01.")) ddate = ddate.substring(6, ddate.length);
-        if (ddate.startsWith("1900")) ddate = "?";
+        var bdate = getDate(d.bdate ? d.bdate : "");
+        var ddate = getDate(d.ddate ? d.ddate : "");
 
         if (bdate != '') ret += '(' + bdate;
-        if (ddate != '') ret += ' - ' + ddate;
-        if (bdate != '' || ddate != '') ret += ')';
+        if (ddate != '?') ret += ' - ' + ddate;
+        if (bdate != '' || ddate != '?') ret += ')';
         return ret;
       })
       .style("fill-opacity", 1)
@@ -1746,7 +1826,7 @@ function addMapMarkers () {
                     anchorYUnits: 'fraction',
                     size: [200, 200],
                     scale: 0.16,
-                    src: 'data:image/png;base64,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'
+                    src: "data:image/png;base64,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"
 //                          src: 'https://cdn.mapmarker.io/api/v1/pin?size=25&background=%236666FF&icon=fa-circle&color=%23FFFFFF&voffset=-2&hoffset=1&'
                 }))
             }),
@@ -1803,23 +1883,18 @@ function createTimeline () {
         },
         tooltip: function(d) {
             // Compose timeline tooltip content
-
-            var format = d3.time.format("%d.%m.%Y");
-            var bdate = d.bdate ? format(new Date(d.bdate)) : "?";
-            if (bdate.startsWith("01.01.")) bdate = bdate.substring(6, bdate.length);
-            if (bdate.startsWith("1900")) bdate = "?";
-            var ddate = d.ddate ? format(new Date(d.ddate)) : "";
-            if (ddate.startsWith("01.01.")) ddate = ddate.substring(6, ddate.length);
-            if (ddate.startsWith("1900")) ddate = "?";
+            var bdate = getDate(d.bdate ? d.bdate : "");
+            var ddate = getDate(d.ddate ? d.ddate : "");
 
             var ret = ('<table><tr valign="top">' + 
               (d.photo ? '<td class="no-borders" align="left" valign="middle"><img src="' + 
                           d.photo + '" height="68px" max-width="68px"></td>' : "") +
               '<td class="no-borders" text-align="left" style="padding-left: 8px;">' + d.name + 
-              (d.bdate && d.bdate != '' ? "<br>" + getDateDescr (d.descr, bdDescr) + bdate : "") +
-              (d.ddate && d.ddate != '' ? "<br>" + getDateDescr (d.descr, ddDescr) + ddate : "") +
+              (d.bdate ? "<br>" + getDateDescr (d.descr, bdDescr) + bdate : "") +
+              (d.ddate ? "<br>" + getDateDescr (d.descr, ddDescr) + ddate : "") +
               (d.place && d.place != '' ? "<br>" + d.place : "") + "</td></tr></table>");
             return ret;
         }
     })
 }
+
