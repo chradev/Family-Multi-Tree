@@ -9,7 +9,7 @@ Multilanguage support for the help.
 
 
 
-Version 2.5 (?.?.2020) changes:
+Version 2.5 (1.7.2020) changes:
 Added support of short date format "-mm-dd"
 Added extended data privacy support in Excel file
 Simplified data conversion of Excel file using xslx2csv and xslx2json NodeJS tools
