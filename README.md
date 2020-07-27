@@ -15,7 +15,7 @@ A special care is taken into account about the privacy of the personal data. The
 
 There is a debug mode (root.hide: "no") where hidden links are visible for verification of relationships:
 
-![Alt text](images/FMTreePublicAppl-d.png?raw=true "Partial snapshot of FMTree application in debug mode")
+![Alt text](images/FMTreePublicAppl-d.jpg?raw=true "Partial snapshot of FMTree application in debug mode")
 
 The current version (2.5) include bigger data and multi-tree view control like: data privacy, horizontal/vertical views, justified/stacked the same level nodes and their layout positioning. The following image shows snapshot of FMTree application with vertical multi-tree and stacked the same level nodes:
 
