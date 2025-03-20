@@ -24,11 +24,11 @@
         <textarea id="jsonArea" rows="10" autocomplete="off"></textarea>
     </td></tr></table>
 
-
     <div id="simpleCsvEditor" class="editor"></div>
 
     <script type="module">
       const textArea = document.getElementById('textArea');
+
       const simpleCsvEditor = new SimpleCsvEditor({
         id: 'simpleCsvEditor',
         data: textArea.value,
@@ -37,6 +37,20 @@
 
       textArea.addEventListener('input', event => {
         simpleCsvEditor.setCsv(event.target.value);
+      });
+
+      textArea.addEventListener('drop', (event) => {
+        event.preventDefault();
+        var file = event.dataTransfer.files[0];
+        if (!file.type.match('text/csv')) return;
+        var reader = new FileReader();
+        reader.onload = (function() {
+            var data2paste = reader.result;
+            textArea.value = data2paste;
+            simpleCsvEditor.setCsv(textArea.value);
+        });
+        // Read in the json file as a text.
+        reader.readAsText(file);
       });
 
       const jsonArea = document.getElementById('jsonArea');
@@ -54,23 +68,9 @@
         reader.readAsText(file);
       });
 
-      textArea.addEventListener('drop', (event) => {
-        event.preventDefault();
-        var file = event.dataTransfer.files[0];
-        if (!file.type.match('text/csv')) return;
-        var reader = new FileReader();
-        reader.onload = (function() {
-            var data2paste = reader.result;
-            textArea.value = data2paste;
-            simpleCsvEditor.setCsv(textArea.value);
-        });
-        // Read in the json file as a text.
-        reader.readAsText(file);
-      });
-
       var parseconfig = {
-    	delimiter: ",",	// auto-detect
-    	newline: "\n\r",	// auto-detect
+    	delimiter: "",	// auto-detect
+    	newline: "",	// auto-detect
     	quoteChar: '"',
     	escapeChar: '"',
     	header: true,
