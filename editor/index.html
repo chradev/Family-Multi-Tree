@@ -2,9 +2,11 @@
 <html>
   <head>
     <title>FM Tree Editor</title>
-    <meta name="description" content="A table editor for easily editing and retrieving CSV data.">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <link rel="stylesheet" href="style.css">
+    <script src="./papaparse.min.js"></script>
+    <script src="./simple-csv-editor.js"></script>
   </head>
   <body>
     <h1>Family Multi Tree Editor</h1>
@@ -13,10 +15,10 @@
         Data in CSV format:
         <textarea id="textArea" rows="10" autocomplete="off"></textarea>
     </td><td style='width: 100px; text-align: center;'>
-        <input type='button' id='save2json' value='&#x226A;' title='Download JSON'><br>
-        <input type='button' id='json2csv' value='&#x276E;' title='Convert JSON to CSV'><br>
-        <input type='button' id='csv2json' value='&#x276F;' title='Convert CSV to JSON'><br>
-        <input type='button' id='save2csv' value='&#x226B;' title='Download CSV'><br>
+        <input type='button' id='save2json' style='width: 40px; text-align: right;'  value='&#x226A;' title='Download JSON'><br>
+        <input type='button' id='json2csv'  style='width: 40px; text-align: center;' value='&#x276E;' title='Convert JSON to CSV'><br>
+        <input type='button' id='csv2json'  style='width: 40px; text-align: center;' value='&#x276F;' title='Convert CSV to JSON'><br>
+        <input type='button' id='save2csv'  style='width: 40px; text-align: left;'   value='&#x226B;' title='Download CSV'><br>
     </td><td style='width: 50%;'>
         Data in JSON format:
         <textarea id="jsonArea" rows="10" autocomplete="off"></textarea>
@@ -25,9 +27,8 @@
 
     <div id="simpleCsvEditor" class="editor"></div>
 
-    <script src="./papaparse.min.js"></script>
     <script type="module">
-      import SimpleCsvEditor from './simple-csv-editor.js';
+//      import SimpleCsvEditor from './simple-csv-editor.js';
 
       const textArea = document.getElementById('textArea');
 
@@ -51,6 +52,20 @@
         reader.onload = (function() {
             var data2paste = reader.result;
             jsonArea.value = data2paste;
+        });
+        // Read in the json file as a text.
+        reader.readAsText(file);
+      });
+
+      textArea.addEventListener('drop', (event) => {
+        event.preventDefault();
+        var file = event.dataTransfer.files[0];
+        if (!file.type.match('text/csv')) return;
+        var reader = new FileReader();
+        reader.onload = (function() {
+            var data2paste = reader.result;
+            textArea.value = data2paste;
+            simpleCsvEditor.setCsv(textArea.value);
         });
         // Read in the json file as a text.
         reader.readAsText(file);
@@ -124,9 +139,6 @@
       });    
 
       function saveTextAsFile(fileNameToSaveAs, textFileAsBlob) {
-//        var textToWrite = document.getElementById('textArea').innerHTML;
-//        var textFileAsBlob = new Blob([ textToWrite ], { type: 'text/plain' });
-//        var fileNameToSaveAs = "file.txt"; //filename.extension
         var downloadLink = document.createElement("a");
         downloadLink.download = fileNameToSaveAs;
         downloadLink.innerHTML = "Download File";
@@ -143,11 +155,23 @@
         downloadLink.click();
       }
 
+//        var textToWrite = document.getElementById('textArea').innerHTML;
+//        var textFileAsBlob = new Blob([ textToWrite ], { type: 'text/plain' });
+//        var fileNameToSaveAs = "file.txt"; //filename.extension
+
       const save2json = document.getElementById('save2json');
       save2json.addEventListener('click', event => {
         if (jsonArea.value) {
           var textFileAsBlob = new Blob([ jsonArea.value ], { type: 'application/json' });
           saveTextAsFile("FMTrre.json", textFileAsBlob);
+        }
+      });
+
+      const save2csv = document.getElementById('save2csv');
+      save2csv.addEventListener('click', event => {
+        if (textArea.value) {
+          var textFileAsBlob = new Blob([ textArea.value ], { type: 'text/csv' });
+          saveTextAsFile("FMTrre.csv", textFileAsBlob);
         }
       });
 
