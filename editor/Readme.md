@@ -22,7 +22,7 @@ Usage is as simple as possible and includes the following steps:
 
 ### Implementation
 
-The current application is written in HTML, CSS and pure JavaScript and should work on any device and OS with any modern browser, without Internet and as local inex.html. The application is not error-free, and there is no data verification, so it is up to the user to know what and how to do. It is made thanks to the following projects:
+The current application is written in HTML, CSS and pure JavaScript and should work on any device and OS with any modern browser, without Internet, even from the local index.html file. The application is not error-free, and there is no data verification, so it is up to the user to know what and how to do. It is made thanks to the following projects:
 - [Daniel Geymayer's "Simple CSV Editor" project](https://github.com/dag0310/simple-csv-editor),
 - [Matt Holt's "Parse CSV with JavaScript" project](https://github.com/mholt/PapaParse),
 - and many other open source resources on the Internet.
