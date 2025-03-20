@@ -28,10 +28,7 @@
     <div id="simpleCsvEditor" class="editor"></div>
 
     <script type="module">
-//      import SimpleCsvEditor from './simple-csv-editor.js';
-
       const textArea = document.getElementById('textArea');
-
       const simpleCsvEditor = new SimpleCsvEditor({
         id: 'simpleCsvEditor',
         data: textArea.value,
@@ -155,10 +152,6 @@
         downloadLink.click();
       }
 
-//        var textToWrite = document.getElementById('textArea').innerHTML;
-//        var textFileAsBlob = new Blob([ textToWrite ], { type: 'text/plain' });
-//        var fileNameToSaveAs = "file.txt"; //filename.extension
-
       const save2json = document.getElementById('save2json');
       save2json.addEventListener('click', event => {
         if (jsonArea.value) {
@@ -174,7 +167,6 @@
           saveTextAsFile("FMTrre.csv", textFileAsBlob);
         }
       });
-
 
     </script>
   </body>
