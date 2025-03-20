@@ -104,6 +104,7 @@
     	delimiter: ",",
     	header: true,
     	encoding: "UTF-8",
+    	skipEmptyLines: true,
     	newline: "\r\n",
     	skipEmptyLines: false, //other option is 'greedy', meaning skip delimiters, quotes, and whitespace.
     	columns: null //or array of strings
@@ -115,7 +116,14 @@
           var json = Papa.parse(textArea.value, parseconfig);
           if(json) {
             if(json.errors.length<1) {
-              jsonArea.value = JSON.stringify(json.data);
+              jsonArea.value = JSON.stringify(json.data, (key, value) => {
+                // Filtering out properties
+//                if ((key.startsWith("pri") || key.includes("_")) && value === "") {
+                if (value === "") {
+                  return undefined;
+                }
+                return value;
+              }, 2);
             } else {
               if(json.errors) jsonArea.value = 'Errors: ' + json.errors[0].message;
               else jsonArea.value = "Invalid JSON data, unable to parse";
