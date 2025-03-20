@@ -1,7 +1,7 @@
 # Family Multi-Tree (FM Tree)
-FM Tree is a simple but powerful web application for viewing, exploring and exporting as graphics of Family Multi-Trees described in data files.
+FM Tree is a simple but powerful web application for viewing, exploring and exporting as graphics of Family Multi-Trees described in data files with CSV (may not work with FM Tree viewer application) and JSON format.
 
-It is based on the latest Internet technologies, like HTML 5 and the Data-Driven Documents (D3) JavaScript library. In addition, live worldwide maps and timelines are used to make the presentation feature rich and more useful. Currently, the application works well with Google Chrome and Mozilla Firefox browsers on a desktop computer with a high-resolution display capable of showing volume graphics generated for complex multi-trees. For helping the users in preparation and later maintenance of data, a simple web application was written in HTML, CSS and pure JavaScript for editing of CSV (may not work with FM Tree web application) and JSON data files.
+It is based on the latest Internet technologies, like HTML 5 and the Data-Driven Documents (D3) JavaScript library. In addition, live worldwide maps and timelines are used to make the presentation feature rich and more useful. Currently, the application works well with Google Chrome and Mozilla Firefox browsers on a desktop computer with a high-resolution display capable of showing volume graphics generated for complex multi-trees. For helping the users in preparation and later on maintenance of the data, a simple web application was written in HTML, CSS and pure JavaScript for editing of CSV and JSON data files.
 
 ![Alt text](images/FMTreePublicAppl-h.jpg?raw=true "FMTree application snapshot")
 
