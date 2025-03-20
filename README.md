@@ -9,7 +9,7 @@ Real demo and more information can be found on the following links (use right mo
 - [Family Multi-Tree web application without any data](https://chradev.github.io/Family-Multi-Tree/)
 - [FMTree application with loading public data with horizontal layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData.json)
 - [FMTree application with loading public data with vertical layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData-v.json)
-- [Brief description of the application in PDF format](https://chradev.github.io/Family-Multi-Tree/utils/FMTreeApp-v2.4.pdf)
+- [Brief description of the application in PDF format](https://chradev.github.io/Family-Multi-Tree/utils/FMTreeApp-v2.5.pdf)
 - [Wiki page with some details on Github](https://github.com/chradev/Family-Multi-Tree/wiki)
 - [All-in-One tool for Family Multi-Tree Data editing](https://chradev.github.io/Family-Multi-Tree/editor/)
 - [Image to Data URL creation tool](https://chradev.github.io/Family-Multi-Tree/utils/image2dataURL.html)
