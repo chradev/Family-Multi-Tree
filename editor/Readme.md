@@ -21,9 +21,8 @@ In addition, context of both CSV and JSON format text areas can be selected, cop
 - CSV export with the ">>" button is not implemented for now;
 - Do not delete, add or move columns into the table;
 - It is up to the editor to add before/after and delete  rows in the table;
-- Paste Data URL of the pictures only in the column "Photo" of the table;
-- Drag-and-drop pictures in PNG or JPEG formats only in the column "Photo";
-- Updating of the CSV text area content after pasting photo requires at least one modification in another cell;
+- Drag-and-drop pictures in PNG or JPEG formats or paste their Data URL  only in the column "Photo" of the table;
+- Updating of the CSV text area content after pasting the photo requires at least one modification in another textual cell;
 
 ### Implementation
 
