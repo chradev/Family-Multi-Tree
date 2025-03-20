@@ -7,12 +7,12 @@ It is based on latest Internet technologies like HTML 5 and Data-Driven Document
 
 Real demo and more information can be found on the following links (use right mouse click to open in a new tab):
 - [Family Multi-Tree web application without any data](https://chradev.github.io/Family-Multi-Tree/)
+- [FMTree application with loading public data with horizontal layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData.json)
+- [FMTree application with loading public data with vertical layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData-v.json)
 - [Brief description of the application in PDF format](https://chradev.github.io/Family-Multi-Tree/utils/image2dataURL.html)
 - [Wiki page with some details on Github](https://github.com/chradev/Family-Multi-Tree/wiki)
 - [All-in-One tool for Family Multi-Tree Data editing](https://chradev.github.io/Family-Multi-Tree/editor/)
 - [Image to Data URL creation tool](https://chradev.github.io/Family-Multi-Tree/utils/image2dataURL.html)
-- [FMTree application with loading public data with horizontal layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData.json)
-- [FMTree application with loading public data with vertical layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData-v.json)
 - [A post with some details on Blogspot](https://chradev.blogspot.com/2020/06/family-multi-tree-fmtree-project-is-on.html)
 
 A special care is taken into account about the privacy of the personal data. They can be stored locally or on secured Internet places. For the most paranoid users all the work can be done completely off-line. On the other hand all source data can be kept only in Excel file and only filtered data can be converted to CSV and JSON files for usage with FMTree application.
