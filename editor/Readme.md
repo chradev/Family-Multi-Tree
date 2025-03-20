@@ -17,7 +17,7 @@ In addition, context of both CSV and JSON format text areas can be selected, cop
 
 [Family Multi-Tree Data Editor](https://chradev.github.io/Family-Multi-Tree/editor/)
 
-Notes: 
+### Notes: 
 - CSV export with the ">>" button is not implemented for now;
 - Do not delete, add or move columns into the table;
 - It is up to the editor to add before/after and delete  rows in the table;
@@ -27,7 +27,7 @@ Notes:
 
 ### Implementation
 
-The current application is written in HTML, CSS and pure JavaScript and should work on any device and OS with any modern browser. It is made thanks to the following projects:
+The current application is written in HTML, CSS and pure JavaScript and should work on any device and OS with any modern browser. The application is not error-free, and data are not verified, so it is up to the user to know what to do. It is made thanks to the following projects:
 - [Daniel Geymayer's "Simple CSV Editor" project](https://github.com/dag0310/simple-csv-editor),
 - [Matt Holt's "Parse CSV with JavaScript" project](https://github.com/mholt/PapaParse),
 - [Emmanuel Sekyere's "CSV JSON convertor" project](https://github.com/wesscoby/csv-json-convertor) etc.
