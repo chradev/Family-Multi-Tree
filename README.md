@@ -21,7 +21,7 @@ There is a debug mode (root.hide: "no") where hidden links are visible for verif
 
 ![Alt text](images/FMTreePublicAppl-d.jpg?raw=true "Partial snapshot of FMTree application in debug mode")
 
-The current version (2.5) include bigger data and multi-tree view control like: data privacy, horizontal/vertical views, justified/stacked the same level nodes and their layout positioning. The following image shows snapshot of FMTree application with vertical multi-tree and stacked the same level nodes:
+The current version (2.6) include bigger data and multi-tree view control like: data privacy, horizontal/vertical views, justified/stacked the same level nodes and their layout positioning. The following image shows snapshot of FMTree application with vertical multi-tree and stacked the same level nodes:
 
 ![Alt text](images/FMTreePublicAppl-v.png?raw=true "Snapshot of FMTree application with vertical stacked multi-tree")
 
