@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FM Tree Editor</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <script src="./papaparse.min.js"></script>
+    <script src="./simple-csv-editor.js"></script>
+  </head>
+  <body>
+    <h1>Family Multi Tree Editor</h1>
+    Drag-n-drop a JSON file to the "Data in JSON format:" text area, convert data to CSV format, edit them in the table, be patient while changing the data, convert data back to JSON, and download them as a new modified JSON file.
+    <table style='width: 100%;'><tr><td style='width: 50%;'>
+        Data in CSV format:
+        <textarea id="textArea" rows="10" autocomplete="off"></textarea>
+    </td><td style='width: 100px; text-align: center;'>
+        <input type='button' id='save2json' style='width: 40px; text-align: right;'  value='&#x226A;' title='Download JSON'><br>
+        <input type='button' id='json2csv'  style='width: 40px; text-align: center;' value='&#x276E;' title='Convert JSON to CSV'><br>
+        <input type='button' id='csv2json'  style='width: 40px; text-align: center;' value='&#x276F;' title='Convert CSV to JSON'><br>
+        <input type='button' id='save2csv'  style='width: 40px; text-align: left;'   value='&#x226B;' title='Download CSV'><br>
+    </td><td style='width: 50%;'>
+        Data in JSON format:
+        <textarea id="jsonArea" rows="10" autocomplete="off"></textarea>
+    </td></tr></table>
+
+    <div id="simpleCsvEditor" class="editor"></div>
+
+    <script type="module">
+      const textArea = document.getElementById('textArea');
+
+      const simpleCsvEditor = new SimpleCsvEditor({
+        id: 'simpleCsvEditor',
+        data: textArea.value,
+        onChange: (data) => { textArea.value = data; },
+      });
+
+      textArea.addEventListener('input', event => {
+        simpleCsvEditor.setCsv(event.target.value);
+      });
+
+      textArea.addEventListener('drop', (event) => {
+        event.preventDefault();
+        var file = event.dataTransfer.files[0];
+        if (!file.type.match('text/csv')) return;
+        var reader = new FileReader();
+        reader.onload = (function() {
+            var data2paste = reader.result;
+            textArea.value = data2paste;
+            simpleCsvEditor.setCsv(textArea.value);
+        });
+        // Read in the json file as a text.
+        reader.readAsText(file);
+      });
+
+      const jsonArea = document.getElementById('jsonArea');
+
+      jsonArea.addEventListener('drop', (event) => {
+        event.preventDefault();
+        var file = event.dataTransfer.files[0];
+        if (!file.type.match('application/json')) return;
+        var reader = new FileReader();
+        reader.onload = (function() {
+            var data2paste = reader.result;
+            jsonArea.value = data2paste;
+        });
+        // Read in the json file as a text.
+        reader.readAsText(file);
+      });
+
+      var parseconfig = {
+    	delimiter: "",	// auto-detect
+    	newline: "",	// auto-detect
+    	quoteChar: '"',
+    	escapeChar: '"',
+    	header: true,
+    	transformHeader: undefined,
+    	dynamicTyping: false,
+    	preview: 0,
+    	encoding: "UTF-8",
+        format: "UTF-8",
+    	worker: false,
+    	comments: false,
+    	step: undefined,
+    	complete: undefined,
+    	error: undefined,
+    	download: false,
+    	downloadRequestHeaders: undefined,
+    	downloadRequestBody: undefined,
+    	skipEmptyLines: true,
+    	chunk: undefined,
+    	chunkSize: undefined,
+    	fastMode: undefined,
+    	beforeFirstChunk: undefined,
+    	withCredentials: undefined,
+    	transform: undefined,
+    	delimitersToGuess: [',', '\t', '|', ';', Papa.RECORD_SEP, Papa.UNIT_SEP],
+    	skipFirstNLines: 0
+      };
+      var unparseconfig = {
+    	quotes: false, //or array of booleans
+    	quoteChar: '"',
+    	escapeChar: '"',
+    	delimiter: ",",
+    	header: true,
+    	encoding: "UTF-8",
+    	skipEmptyLines: true,
+    	newline: "\r\n",
+    	skipEmptyLines: false, //other option is 'greedy', meaning skip delimiters, quotes, and whitespace.
+    	columns: null //or array of strings
+      };
+
+      const csv2json = document.getElementById('csv2json');
+      csv2json.addEventListener('click', event => {
+        if (textArea.value) {
+          var json = Papa.parse(textArea.value, parseconfig);
+          if(json) {
+            if(json.errors.length<1) {
+              jsonArea.value = JSON.stringify(json.data, (key, value) => {
+                // Filtering out properties
+//                if ((key.startsWith("pri") || key.includes("_")) && value === "") {
+                if (value === "") {
+                  return undefined;
+                }
+                return value;
+              }, 2);
+            } else {
+              if(json.errors) jsonArea.value = 'Errors: ' + json.errors[0].message;
+              else jsonArea.value = "Invalid JSON data, unable to parse";
+            }
+          }
+        }
+      });    
+
+      const json2csv = document.getElementById('json2csv');
+      json2csv.addEventListener('click', event => {
+        if (jsonArea.value) {
+          var csv = Papa.unparse(jsonArea.value, unparseconfig);
+          if(csv) {
+              textArea.value = csv;
+          }
+        }
+        simpleCsvEditor.setCsv(textArea.value);
+      });    
+
+      function saveTextAsFile(fileNameToSaveAs, textFileAsBlob) {
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null) {
+          // Chrome allows the link to be clicked without actually adding it to the DOM.
+          downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+        } else {
+          // Firefox requires the link to be added to the DOM before it can be clicked.
+          downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+          downloadLink.onclick = destroyClickedElement;
+          downloadLink.style.display = "none";
+          document.body.appendChild(downloadLink);
+        }
+        downloadLink.click();
+      }
+
+      const save2json = document.getElementById('save2json');
+      save2json.addEventListener('click', event => {
+        if (jsonArea.value) {
+          var textFileAsBlob = new Blob([ jsonArea.value ], { type: 'application/json' });
+          saveTextAsFile("FMTrre.json", textFileAsBlob);
+        }
+      });
+
+      const save2csv = document.getElementById('save2csv');
+      save2csv.addEventListener('click', event => {
+        if (textArea.value) {
+          var textFileAsBlob = new Blob([ textArea.value ], { type: 'text/csv' });
+          saveTextAsFile("FMTrre.csv", textFileAsBlob);
+        }
+      });
+
+    </script>
+  </body>
+</html>
