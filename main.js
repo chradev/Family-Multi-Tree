@@ -664,20 +664,20 @@ async function clickSaveChart(type) {
   // Add text for exporting images - will be deleted after page reload
   svg.append("text")
       .attr("class", "text")
-      .attr("dx", 80 - svgOffsetY - svgOffsetY1)
+      .attr("dx", 2 * circleRadius - svgOffsetY - svgOffsetY1)
       .attr("dy", bbox.height - svgOffsetX + 80)
       .style("fill-opacity", 1)
       .attr("text-anchor", function(d) { return "left"; })
-      .style("font", textFont.replace(/\d+px/, "40px"))
+      .style("font", textFont)
       .text(document.title);
 
   svg.append("text")
       .attr("class", "text")
-      .attr("dx", bbox.width - svgOffsetY - svgOffsetY1 - 80)
+      .attr("dx", bbox.width - svgOffsetY - svgOffsetY1 - 2 * circleRadius)
       .attr("dy", bbox.height - svgOffsetX + 80)
       .style("fill-opacity", 1)
       .attr("text-anchor", function(d) { return "right"; })
-      .style("font", textFont.replace(/\d+px/, "15px"))
+      .style("font", textFont)
       .text('© ChRadev');
 
   svgNode.setAttribute('transform', 'translate(' + (svgOffsetY + svgOffsetY1) + ','+ svgOffsetX + ')');
@@ -1555,7 +1555,7 @@ function update(source) {
       .append("svg:path")
       .attr("class", function(d) { return d.source.id == 'root' || d.source.hide == 'yes' ? "link-invisible" : d.source.id; })
       .classed("link", true)
-      .style("stroke-width", function(d) { return (!root.hide || root.hide != 'yes') && (!d.source || d.source.hide != '') ? 2 : ''; })
+      .style("stroke-width", function(d) { return (root.hide === 'yes' && d.source.hide === 'yes') ? '' : (circleRadius / 20) + 'px'; })
       .attr("d", diagonal);
 
   // Update the nodes
