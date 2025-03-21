@@ -1,5 +1,9 @@
 ToDo list
 
+General change:
+  from built-in the data files invisible nodes to those added at run time,
+  from manually written data files to those generated from large database.
+
 Better work:
   on mobile devices,
   with other browsers;
@@ -7,6 +11,13 @@ Open data from link to other sites;
 Solve the dates problem with some browsers;
 Multilanguage support for the help.
 
+
+
+Version 2.6 (21.3.2025) changes:
+Fixed the problem with CSV files reading,
+Fixed landscape layout positioning of nodes,
+Changed the name of the saved SVG/PNG files,
+Other cosmetic changes.
 
 
 Version 2.5 (1.7.2020) changes:
