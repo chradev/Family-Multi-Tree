@@ -7,7 +7,7 @@ It is based on the latest Internet technologies, like HTML 5 and the Data-Driven
 
 Real demo and more information can be found on the following links (use right mouse click to open in a new tab):
 - [FM Tree web application without any data](https://chradev.github.io/Family-Multi-Tree/)
-- [FM Tree application with loading public data with horizontal layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData.json)
+- [FM Tree application with loading public data with horizontal layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData-h.json)
 - [FM Tree application with loading public data with vertical layout](https://chradev.github.io/Family-Multi-Tree/?data=FMTreePublicData-v.json)
 - [Brief description of the application and data in PDF format](https://chradev.github.io/Family-Multi-Tree/utils/FMTreeApp-v2.5.pdf)
 - [Wiki page with some details on Github](https://github.com/chradev/Family-Multi-Tree/wiki)
