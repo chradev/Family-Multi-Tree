@@ -1,6 +1,6 @@
 // Static internal data with single root node (hidden)
 var defaultData = [{
-  "name": "Family Multi-Tree application (ver. 2.5, 1.7.2020)",
+  "name": "Family Multi-Tree application (ver. 2.6, 21.3.2025)",
   "id": "root",
   "parents": null,
   "hide": "yes",
@@ -892,10 +892,10 @@ function clickGetData() {
   if (window.location.href.startsWith("file")) {
     Swal.fire({
       type:  'info',
-      title: 'FM Tree loaded from file!',
+      title: 'Load FM Tree from a local file!',
       position: 'top-end',
       padding: '30px',
-      html: 'You can load data using Open Chart menu function,<br>Crtl+F3 key combination or push Browse button'
+      html: 'You can load data using Open Chart menu function,<br>Crtl+F3 key combination, push Browse button<br>or drag-and-drop the file in dashed area'
     });
     return;
   }
@@ -914,11 +914,11 @@ function clickGetData() {
           title: 'FM Tree data download!',
           position: 'top-end',
           padding: '30px',
-          html: 'Data have been written to file FMTreeData.json<br> in downloads folder with file size: ' + 
+          html: 'Data have been written to file FMTreePublicData.json<br> in downloads folder with file size: ' + 
                 filesize + '.<br>A number within brackets like (3)<br>may be added to the end of the name!'
         });
         // FileSaver.js function
-        saveAs(blob, 'FMTreeData.json' );
+        saveAs(blob, 'FMTreePublicData.json' );
       };
   };
   request.send();
@@ -1056,7 +1056,8 @@ var diagonal = d3.svg.diagonal()
 var nodesLayer = svg.append('g').attr('id', 'nodes-layer');
 
 function LimitString(len, str) {
-  fileNameToSave = str.replace(/[/.]/g,'-');
+//  fileNameToSave = str.replace(/[/.]/g,'-');
+  fileNameToSave = str.substring(0, str.indexOf("."));
   return str.length < len ? str : str.substr(0,len/2 - 2) +"..."+str.substr(str.length - len/2 + 1,len/2 - 1
 );}
 
@@ -1165,7 +1166,7 @@ function readStoredFile(file) {
       if (file.type == 'application/json') {
           var json = JSON.parse(data);
           convertData (_.clone(json));
-      } else if (file.type == 'application/vnd.ms-excel') {
+      } else if (file.type == 'text/csv' || file.type == 'application/vnd.ms-excel') {
           var csv = d3.csv.parse(data)
           convertData (_.clone(csv));
       } else {
@@ -1180,7 +1181,8 @@ function readStoredFile(file) {
 // Function to read opened/dropped data file - fist one from the file list
 function readFile(files) {
   // File must be JSON or CSV
-  if (!files[0].type.match('application/json|application/vnd.ms-excel')) return;
+console.log(files[0].type);
+  if (!files[0].type.match('text/csv|application/json|application/vnd.ms-excel')) return;
   var file = files[0];
   // FileName label is used instead of input type="file" to show file name
   document.getElementById("FileName").innerHTML = LimitString(30,file.name);
@@ -1202,7 +1204,7 @@ function readFile(files) {
       if (file.type == 'application/json') {
           var json = JSON.parse(data);
           convertData (_.clone(json));
-      } else if (file.type == 'application/vnd.ms-excel') {
+      } else if (file.type == 'text/csv' || file.type == 'application/vnd.ms-excel') {
           var csv = d3.csv.parse(data)
           convertData (_.clone(csv));
       } else {
@@ -1220,6 +1222,7 @@ var charLen = 10;
 var layerStacked = false;
 var textOff = 16;
 var textOff1 = 1;
+var textOff2 = 1;
 // Function to convert read data file in tree data structure
 // and initialize SVG and other general staff
 function convertData (fdata) {
@@ -1277,6 +1280,7 @@ function convertData (fdata) {
   if (numParams[3] && numParams[3] === '1') { landscapeOrientation = false; textOff1 = 3; };
   if (numParams[4] && numParams[4] === '1') layerStacked = true;
   if (numParams[5]) textOff1 = 1 * numParams[5];
+  if (landscapeOrientation && numParams[5]) { textOff1 = 1; textOff2 = 1 * numParams[5]; };
 
   if (root.font && root.font != '') textFont = root.font;
 
@@ -1488,7 +1492,7 @@ function update(source) {
           var itemPrev = _.filter(dyPerDepth, { depth: index - 1 });
           dy += Math.max(circleRadius * 2, charLen * Math.max(26, (itemPrev[0].maxlen / 2 + itemCurr[0].maxlen / 2)));
         }
-        d.y = dy;
+        d.y = dy * textOff2;
       }
     });
   } else {  // Portrait orientation
@@ -1897,4 +1901,3 @@ function createTimeline () {
         }
     })
 }
-
