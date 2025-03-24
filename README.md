@@ -12,7 +12,7 @@ Real demo and more information can be found on the following links (use right mo
 - [Brief description of the application and data in PDF format](https://chradev.github.io/Family-Multi-Tree/utils/FMTreeApp-v2.5.pdf)
 - [Wiki page with some details on Github](https://github.com/chradev/Family-Multi-Tree/wiki)
 - [All-in-One tool for Family Multi-Tree Data editing](https://chradev.github.io/Family-Multi-Tree/editor/)
-- [Image to Data URL creation tool](https://chradev.github.io/Family-Multi-Tree/utils/image2dataURL.html)
+- [Image to Data URL creation tool](https://chradev.github.io/Family-Multi-Tree/editor/image2dataURL.html)
 - [A post with some details on Blogspot](https://chradev.blogspot.com/2020/06/family-multi-tree-fmtree-project-is-on.html)
 
 A special care is taken into account about the privacy of the personal data. They can be stored locally or on secured Internet places. For the most paranoid users all the work can be done completely off-line. On the other hand all source data can be kept only in Excel file and only filtered data can be converted to JSON and CSV files for usage with FM Tree application.
